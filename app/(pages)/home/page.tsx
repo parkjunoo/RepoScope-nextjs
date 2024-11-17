@@ -7,7 +7,7 @@ import { searchRepo } from "./api";
 const HomePage: React.FC = () => {
   const { data } = useQuery({
     queryKey: ["searchRepo"],
-    queryFn: searchRepo,
+    queryFn: () => searchRepo("react"),
   });
 
   useEffect(() => {
