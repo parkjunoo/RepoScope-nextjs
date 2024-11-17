@@ -3,10 +3,14 @@ import Constant from "../_utils/constant";
 
 class Service {
   axiosInstance: AxiosInstance;
-  constructor(baseUrl = Constant.BASE_URL, timeout = Constant.TIMEOUT) {
+  constructor(baseUrl: string, timeout: number, API_TOKEN?: string) {
     this.axiosInstance = axios.create({
       baseURL: baseUrl,
       timeout: timeout,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
     });
 
     this.axiosInstance.interceptors.request.use(
@@ -29,7 +33,12 @@ class Service {
   }
 }
 
-// API 객체 생성
-const api = { githubService: new Service(Constant.BASE_URL) };
+const api = {
+  githubService: new Service(
+    Constant.BASE_URL,
+    30000,
+    process.env.NEXT_PUBLIC_GITHUB_API_TOKEN
+  ),
+};
 
 export default api;

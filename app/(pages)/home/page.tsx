@@ -1,19 +1,23 @@
 "use client";
 
 import React, { useEffect } from "react";
-import api from "../../_service/axios";
+import { useQuery } from "@tanstack/react-query";
+import { searchRepo } from "./api";
 
 const HomePage: React.FC = () => {
+  const { data } = useQuery({
+    queryKey: ["searchRepo"],
+    queryFn: searchRepo,
+  });
+
   useEffect(() => {
-    api.githubService.get("/").then((res) => {
-      console.log(res);
-    });
-  }, []);
+    console.log(data);
+  }, [data]);
 
   return (
     <div>
-      <h1>Welcome to RepoScope</h1>
-      <p>This is the home page of your Next.js application.</p>
+      <input></input>
+      <button>-</button>
     </div>
   );
 };

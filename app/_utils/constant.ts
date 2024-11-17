@@ -1,5 +1,5 @@
 class Constant {
-  static readonly BASE_URL = ".";
+  static readonly BASE_URL = "https://api.github.com";
   static readonly TIMEOUT = 15000;
   static readonly API_VERSION = "v1";
   static getFullApiUrl() {
