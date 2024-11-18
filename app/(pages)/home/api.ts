@@ -9,15 +9,22 @@ interface SearchRepoResponse {
     stargazers_count: number;
   }>;
 }
+interface QueryParams {
+  user?: string;
+  repoName?: string;
+}
 
 export const searchRepo = async (
-  query: string
+  queryParams: QueryParams
 ): Promise<SearchRepoResponse> => {
   try {
     const response = await api.githubService.get<SearchRepoResponse>(
       "/search/repositories",
       {
-        q: query,
+        q:
+          queryParams.user &&
+          `user:${queryParams.user}` + queryParams.repoName &&
+          `${encodeURIComponent(queryParams.repoName || "")}`,
       }
     );
     return response.data;

@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { searchRepo } from "./api";
+import { Flex, TextField } from "@radix-ui/themes"; // or the appropriate library
 
 const HomePage: React.FC = () => {
   const { data } = useQuery({
@@ -16,8 +17,9 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      <input></input>
-      <button>-</button>
+      <Flex direction="column" gap="3" maxWidth="50%">
+        <TextField.Root radius="large" placeholder="Search the docs…" />
+      </Flex>
     </div>
   );
 };
