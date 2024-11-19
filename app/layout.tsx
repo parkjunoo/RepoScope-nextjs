@@ -17,15 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Theme
-          accentColor="blue"
-          grayColor="mauve"
-          radius="large"
-          scaling="90%"
-        >
+        <Theme>
           <QueryProviders>
             <MainHeader />
-            {children}
+            <div>{children}</div>
           </QueryProviders>
         </Theme>
       </body>
