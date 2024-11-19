@@ -1,7 +1,6 @@
 import "./_styles/globals.css";
 import QueryProviders from "./query-provider";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
 import MainHeader from "./_components/MainHeader";
 
 export const metadata = {
@@ -16,13 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Theme>
-          <QueryProviders>
-            <MainHeader />
-            <div>{children}</div>
-          </QueryProviders>
-        </Theme>
+      <body className="bg-gray-800">
+        <QueryProviders>
+          <MainHeader />
+          <div>{children}</div>
+        </QueryProviders>
       </body>
     </html>
   );

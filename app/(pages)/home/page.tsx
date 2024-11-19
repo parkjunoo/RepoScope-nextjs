@@ -17,10 +17,8 @@ const HomePage: React.FC = () => {
   }, [data]);
 
   return (
-    <div>
-      <Flex direction="row" gap="3" maxWidth="50%">
-        <SearchBar />
-      </Flex>
+    <div className="w-full my-4 flex justify-center">
+      <SearchBar />
     </div>
   );
 };
