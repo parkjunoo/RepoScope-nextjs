@@ -9,12 +9,10 @@ import SearchBar from "@/app/_components/SearchBar";
 const HomePage: React.FC = () => {
   const { data } = useQuery({
     queryKey: ["searchRepo"],
-    queryFn: () => searchRepo("react"),
+    queryFn: () => searchRepo(""),
   });
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  useEffect(() => {}, [data]);
 
   return (
     <div className="w-full my-4 flex justify-center">
