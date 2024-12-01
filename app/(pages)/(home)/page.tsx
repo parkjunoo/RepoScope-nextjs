@@ -1,9 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SearchBar from "./components/SearchBar";
 
 const HomePage: React.FC = () => {
-  return <div className="w-full ">home</div>;
+  const [searchKeyword, setSearchKeyword] = useState("");
+  return (
+    <div className="p-4">
+      <div>REPO-SCOPE</div>
+      <SearchBar
+        searchKeyword={searchKeyword}
+        setSearchKeyword={setSearchKeyword}
+      />
+    </div>
+  );
 };
 
 export default HomePage;

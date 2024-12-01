@@ -1,14 +1,14 @@
 import "./_styles/globals.css";
 import "@radix-ui/themes/styles.css";
 import QueryProvider from "./queryProvider";
-import Header from "./_common/components/header/header";
+import Header from "./_common/components/header/Header";
 import { Theme } from "@radix-ui/themes";
 
 export const metadata = {
   title: "RepoScope",
   description: "A GitHub repository search engine",
 };
-
+// #19202c
 export default function RootLayout({
   children,
 }: {
@@ -16,19 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Theme accentColor="indigo" className="flex flex-col">
+      <body
+        className="flex justify-center bg-slate-400"
+        style={{
+          backgroundColor: "#19202c",
+        }}
+      >
+        <Theme
+          accentColor="indigo"
+          className="flex flex-col h-auto
+          sm:w-full md:w-full lg:w-[1024px]"
+          // width 고저
+        >
           <QueryProvider>
             <Header />
-            <div
-              className="
-              flex-1
-              dark:bg-gray-800
-              dark:text-white
-            "
-            >
-              {children}
-            </div>
+            <div className="flex-auto bg-red-400">{children}</div>
           </QueryProvider>
         </Theme>
       </body>
