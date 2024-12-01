@@ -1,9 +1,8 @@
 import "./_styles/globals.css";
 import "@radix-ui/themes/styles.css";
-import QueryProviders from "./query-provider";
-import { ThemeProvider } from "next-themes";
+import QueryProvider from "./queryProvider";
+import Header from "./_common/components/header/header";
 import { Theme } from "@radix-ui/themes";
-import MainHeader from "./_components/MainHeader";
 
 export const metadata = {
   title: "RepoScope",
@@ -18,23 +17,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          <Theme
-            accentColor="mint"
-            grayColor="gray"
-            panelBackground="solid"
-            scaling="100%"
-            radius="full"
-            style={{
-              backgroundColor: "#1f2937",
-            }}
-          >
-            <QueryProviders>
-              <MainHeader />
-              <div>{children}</div>
-            </QueryProviders>
-          </Theme>
-        </ThemeProvider>
+        <Theme accentColor="indigo" className="flex flex-col">
+          <QueryProvider>
+            <Header />
+            <div
+              className="
+              flex-1
+              dark:bg-gray-800
+              dark:text-white
+            "
+            >
+              {children}
+            </div>
+          </QueryProvider>
+        </Theme>
       </body>
     </html>
   );

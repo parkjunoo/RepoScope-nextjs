@@ -10,3 +10,5 @@ const debounce = <T extends (...args: any[]) => any>(fn: T, delay: number) => {
     return result;
   };
 };
+
+export default debounce;
