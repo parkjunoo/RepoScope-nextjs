@@ -33,17 +33,10 @@ const Header: React.FC<HeaderProps> = () => {
     $document.remove("dark");
     localStorage.setItem("theme", "light");
   };
-  /*
 
-  브레이크포인트 이름	최소 너비	설명
-  sm	640px	작은 화면 (모바일)
-  md	768px	중간 화면 (태블릿)
-  lg	1024px	큰 화면 (노트북)
-  xl	1280px	매우 큰 화면 (데스크탑)
-  2xl	1536px	초대형 화면
-*/
   return (
-    <header className="w-full h-14 bg-white dark:bg-gray-800 sm:bg-red-800 md:bg-red-400 lg:bg-red-600">
+    //bg-[#f1f3f4] dark:bg-[#19202c] dark:text-white
+    <header className="w-full h-14 bg-[#f1f3f4] dark:bg-[#19202c] dark:text-white">
       <div className="flex items-center justify-between h-full px-4 dark:text-white">
         RepoScope
         <div className="flex flex-row justify-center items-center">

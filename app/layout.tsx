@@ -8,7 +8,9 @@ export const metadata = {
   title: "RepoScope",
   description: "A GitHub repository search engine",
 };
-// #19202c
+// #19202c dark
+// #f1f3f4 light
+
 export default function RootLayout({
   children,
 }: {
@@ -16,21 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className="flex justify-center bg-slate-400"
-        style={{
-          backgroundColor: "#19202c",
-        }}
-      >
-        <Theme
-          accentColor="indigo"
-          className="flex flex-col h-auto
-          sm:w-full md:w-full lg:w-[1024px]"
-          // width 고저
-        >
+      <body className="flex justify-center bg-[#f1f3f4] dark:bg-[#19202c] dark:text-white">
+        <Theme className="flex flex-col h-auto sm:w-full md:w-full lg:w-[1024px]">
           <QueryProvider>
             <Header />
-            <div className="flex-auto bg-red-400">{children}</div>
+            <div className="px-4">{children}</div>
           </QueryProvider>
         </Theme>
       </body>

@@ -25,10 +25,10 @@ const SearchBar: React.FC<SearchBarProps> = () => {
 
   return (
     <div className="px-4">
-      <div className="relative w-full h-9 bg-gray-500 rounded-xl p-2">
+      <div className="relative w-full h-[50px] rounded-full p-2">
         <input
           type="search"
-          className=" absolute top-0 left-0 w-full h-8  rounded-full focus:outline-none"
+          className=" absolute top-1/2 left-1/2 w-11/12 h-[48px] focus:outline-none -translate-x-1/2 -translate-y-1/2"
         />
         <button className="absolute w-9 top-0 right-0 h-9 bg-black text-white rounded-full">
           검색
